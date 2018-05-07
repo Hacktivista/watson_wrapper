@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if [ $1 == "start" ]; then
+if [ "$1" = "start" ]; then
 	window_activity.sh&
 	capture_screenshots.sh 300 "$HOME/Pictures/screenshots/$2"&
 fi
 
-if [ $1 == "stop" ] && [ $# == 1 ] ; then
+if [ "$1" = "stop" ] && [ $# = 1 ] ; then
 	killall -HUP window_activity.sh capture_screenshots.sh
 fi
 
